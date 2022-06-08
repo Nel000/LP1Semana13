@@ -41,5 +41,37 @@ namespace MultipleStuff
                 }
             }
         }
+
+        public Tuple<double, double> GetMinMax3()
+        {
+            double minValue = this[0], maxValue = 0;
+
+            for (int i = 0; i < this.Count; i++)
+            {
+                if (this[i] > maxValue)
+                    maxValue = this[i];
+
+                if (this[i] < minValue)
+                    minValue = this[i];
+            }
+
+            return Tuple.Create(minValue, maxValue);
+        }
+
+        public (double MinValue, double MaxValue) GetMinMax4()
+        {
+            double minValue = this[0], maxValue = 0;
+
+            for (int i = 0; i < this.Count; i++)
+            {
+                if (this[i] > maxValue)
+                    maxValue = this[i];
+
+                if (this[i] < minValue)
+                    minValue = this[i];
+            }
+
+            return (minValue, maxValue);
+        }
     }
 }
