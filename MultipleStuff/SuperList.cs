@@ -21,5 +21,25 @@ namespace MultipleStuff
             max = maxValue;
             return minValue;
         }
+
+        public class GetMinMax2
+        {
+            public double MinValue { get; }
+            public double MaxValue { get; }
+
+            public GetMinMax2(List<double> list)
+            {
+                MinValue = list[0];
+
+                for (int i = 0; i < list.Count; i++)
+                {
+                    if (list[i] > MaxValue)
+                        MaxValue = list[i];
+
+                    if (list[i] < MinValue)
+                        MinValue = list[i];
+                }
+            }
+        }
     }
 }
